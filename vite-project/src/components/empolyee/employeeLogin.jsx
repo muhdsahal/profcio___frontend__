@@ -19,7 +19,7 @@ import {
     Button,
   } from "@material-tailwind/react";
 
-export function LoginForm(){
+export function EmployeeLogin(){
     const navigate = useNavigate();
     const [user,setUser] = useState({email:"",password:""});
 
@@ -62,7 +62,7 @@ export function LoginForm(){
 
                 handleLoading();
                 toast.success("Signed with Google..!")
-                navigate("/");
+                navigate("/employee");
             }
         }catch(err){
             handleLoading();
@@ -112,9 +112,9 @@ export function LoginForm(){
               localStorage.setItem("token", token);
 
               if (decoded.is_admin) {
-                  navigate("/");
+                  navigate("/admin");
               } else {
-                  navigate("/");
+                  navigate("/employee");
               }
           } catch (error) {
               if (error.response && error.response.data.detail) {

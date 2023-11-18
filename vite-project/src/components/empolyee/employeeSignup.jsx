@@ -12,19 +12,16 @@ import {Card,
 import {userRegisterURL} from '../../constants/constants'
 import Loader from '../Loading/Loading'
 
-export function SimpleRegistrationForm(){
+export function EmployeeRegistrationForm(){
     const navigate =useNavigate()
 
     const [other,setOther] = useState({conf_Password:"",check:false});
 
     // form 
     const [formData,setFormData] =useState({
-        first_name:"",
-        last_name:"",
         username:"",
         email:"",
         password:"",
-        employee : false
     });
 
     const [user,setUser] = useState([]);
@@ -113,11 +110,11 @@ export function SimpleRegistrationForm(){
             username:"",
             email:"",
             password:"",
-            employee:false
+            
         })
         setOther({conf_Password:"",check:false})
         handleLoading();
-        navigate("/confirm")
+        navigate("/employeeverification")
         }catch(error){
             
             handleLoading();

@@ -1,4 +1,5 @@
 import React from "react";
+
 import {
   Navbar,
   MobileNav,
@@ -11,6 +12,7 @@ import {
   Avatar,
   Card,
   IconButton,
+  Collapse
 } from "@material-tailwind/react";
 import {
   CubeTransparentIcon,
@@ -263,13 +265,13 @@ export function ComplexNavbar() {
         </IconButton>
  
         <Button size="sm" variant="text">
-          <span>Log In</span>
+          <span>LogIn</span>
         </Button>
         <ProfileMenu />
       </div>
-      <MobileNav open={isNavOpen} className="overflow-scroll">
+      <Collapse open={isNavOpen} className="overflow-scroll">
         <NavList />
-      </MobileNav>
+      </Collapse>
     </Navbar>
   );
 }
